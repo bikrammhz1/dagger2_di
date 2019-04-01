@@ -6,7 +6,6 @@ import android.content.Context;
 import com.rbmhz.dagger2.di_init.component.ApplicationComponent;
 import com.rbmhz.dagger2.di_init.component.DaggerApplicationComponent;
 import com.rbmhz.dagger2.di_init.module.ApiModule;
-import com.rbmhz.dagger2.di_init.module.ApplicationModule;
 
 public class App extends Application {
 
@@ -24,7 +23,6 @@ public class App extends Application {
 
     private void initializeDependencies() {
         applicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
                 .apiModule(new ApiModule())
                 .build();
     }
